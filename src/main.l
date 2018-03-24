@@ -11,13 +11,13 @@ void yyerror(char *);
 
 inteiro [0-9]+
 palavra [A-Za-z]+
-string \"{palavra}\"
+string [\"]([ ]*{palavra}[ ]*)*[\"]
 
 %%
 
 {inteiro} { return inteiro; }
-{string} { return string; }
 {palavra} { return palavra; }
+{string} { return string; }
 
 [,] { return virgula; }
 
